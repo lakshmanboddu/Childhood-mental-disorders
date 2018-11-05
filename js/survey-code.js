@@ -7,6 +7,7 @@ var surveyJSON = {
       "type": "radiogroup",
       "name": "Psychosis",
       "title": "Does your child have Delusions, hallucinations, or thought disorder?",
+      "isRequired": true,
       "choices": [{
         "value": "yes",
         "text": "Yes"
@@ -22,6 +23,7 @@ var surveyJSON = {
       "name": "Adj. disorder with anxious mood",
       "title": "Anxiety in reaction to identifiable stressor within 3 months?",
       "valueName": "Adj  disorder with anxious mood",
+      "isRequired": true,
       "choices": [{
         "value": "yes",
         "text": "Yes"
@@ -34,8 +36,84 @@ var surveyJSON = {
     "name": "page3",
     "elements": [{
       "type": "radiogroup",
+      "name": "Attention deficit disorder",
+      "title": "Short attention span, impulsive, and hyperactive?",
+      "isRequired": true,
+      "choices": [{
+        "value": "yes",
+        "text": "Yes"
+      }, {
+        "value": "no",
+        "text": "No"
+      }]
+    }]
+  }, {
+    "name": "page4",
+    "elements": [{
+      "type": "radiogroup",
       "name": "Separation anxiety disorder",
       "title": "Short attention span, impulsive, and hyperactive?",
+      "isRequired": true,
+      "choices": [{
+        "value": "yes",
+        "text": "Yes"
+      }, {
+        "value": "no",
+        "text": "No"
+      }]
+    }]
+  }, {
+    "name": "page5",
+    "elements": [{
+      "type": "radiogroup",
+      "name": "Avoidant disorder",
+      "title": "Anxiety when anticipating or experiencing separation from parents or caretaker?-",
+      "isRequired": true,
+      "choices": [{
+        "value": "yes",
+        "text": "Yes"
+      }, {
+        "value": "no",
+        "text": "No"
+      }]
+    }]
+  }, {
+    "name": "page6",
+    "elements": [{
+      "type": "radiogroup",
+      "name": "Overanxious disorder",
+      "title": "Persistent generalized anxiety?",
+      "isRequired": true,
+      "choices": [{
+        "value": "item1",
+        "text": "Yes"
+      }, {
+        "value": "item2",
+        "text": "No"
+      }]
+    }]
+  }, {
+    "name": "page7",
+    "elements": [{
+      "type": "radiogroup",
+      "name": "Agoraphobia with panic attacks",
+      "title": "Fears incapacitation outside home or public places with Panic attacks?",
+      "isRequired": true,
+      "choices": [{
+        "value": "yes",
+        "text": "Yes"
+      }, {
+        "value": "no",
+        "text": "No"
+      }]
+    }]
+  }, {
+    "name": "page8",
+    "elements": [{
+      "type": "radiogroup",
+      "name": "Agoraphobia without panic attacks",
+      "title": "Fears incapacitation outside home or public places without any Panic attacks?",
+      "isRequired": true,
       "choices": [{
         "value": "yes",
         "text": "Yes"
@@ -45,9 +123,9 @@ var surveyJSON = {
       }]
     }]
   }],
-  "showQuestionNumbers": "off",
-  "startSurveyText": "Start Survey"
-}
+  "startSurveyText": "Start Survey",
+  "questionTitleTemplate": "{no}. {title}{require}"
+};
 
 function sendDataToServer(survey) {
   //send Ajax request to your web server.
