@@ -1,33 +1,52 @@
 var surveyJSON = {
+  "title": "Analyzing Anxiety or Hyper Activity",
+  "loadingHtml": "LOADING... PLEASE WAIT",
   "pages": [{
     "name": "page1",
     "elements": [{
       "type": "radiogroup",
-      "name": "ageques",
-      "title": "Age?",
+      "name": "Psychosis",
+      "title": "Does your child have Delusions, hallucinations, or thought disorder?",
       "choices": [{
-        "value": ">=18",
-        "text": ">-=18"
+        "value": "yes",
+        "text": "Yes"
       }, {
-        "value": "<18",
-        "text": "<18"
+        "value": "no",
+        "text": "No"
       }]
     }]
   }, {
     "name": "page2",
     "elements": [{
       "type": "radiogroup",
-      "name": "salques",
-      "title": "Salary?",
+      "name": "Adj. disorder with anxious mood",
+      "title": "Anxiety in reaction to identifiable stressor within 3 months?",
+      "valueName": "Adj  disorder with anxious mood",
       "choices": [{
-        "value": "10000+",
-        "text": "10000+"
+        "value": "yes",
+        "text": "Yes"
       }, {
-        "value": "10000-",
-        "text": "10000-"
+        "value": "no",
+        "text": "No"
       }]
     }]
-  }]
+  }, {
+    "name": "page3",
+    "elements": [{
+      "type": "radiogroup",
+      "name": "Separation anxiety disorder",
+      "title": "Short attention span, impulsive, and hyperactive?",
+      "choices": [{
+        "value": "yes",
+        "text": "Yes"
+      }, {
+        "value": "no",
+        "text": "No"
+      }]
+    }]
+  }],
+  "showQuestionNumbers": "off",
+  "startSurveyText": "Start Survey"
 }
 
 function sendDataToServer(survey) {
