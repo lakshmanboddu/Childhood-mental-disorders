@@ -100,11 +100,11 @@ var surveyJSON = {
         "title": "Persistent generalized anxiety?",
         "isRequired": true,
         "choices": [{
-            "value": "item1",
+            "value": "yes",
             "text": "Yes"
           },
           {
-            "value": "item2",
+            "value": "no",
             "text": "No"
           }
         ]
@@ -224,8 +224,25 @@ var surveyJSON = {
 };
 
 function sendDataToServer(survey) {
-  //send Ajax request to your web server.
-  alert("The results are:" + JSON.stringify(survey.data));
+  //Core logic
+  var x = JSON.parse(JSON.stringify(survey.data));
+  var str = "The child may have ";
+  var i = 0;
+  for (const key of Object.keys(x)) {
+    // console.log(x[key]);
+    if (x[key] == "yes") {
+      i++;
+      if (i > 1) {
+        str += " and ";
+      }
+      str += key.toString();
+    }
+  }
+  if (i <= 2)
+    alert(str);
+  else {
+    alert("The child may have multiple " + JSON.stringify(survey.title) + " disorders")
+  }
 }
 
 var survey = new Survey.Model(surveyJSON);
