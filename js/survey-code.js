@@ -1,5 +1,5 @@
 var surveyJSON = {
-  "title": "Analyzing Anxiety or Hyper Activity",
+  "title": "Anxiety or Hyper Activity",
   "loadingHtml": "LOADING... PLEASE WAIT",
   "pages": [{
       "name": "page1",
@@ -238,10 +238,12 @@ function sendDataToServer(survey) {
       str += key.toString();
     }
   }
-  if (i <= 2)
+  if (i==0)
+    alert("The child doesn't seem to have any " + JSON.stringify(survey.title) + "disorders");
+  else if (i <= 2)
     alert(str);
   else {
-    alert("The child may have multiple " + JSON.stringify(survey.title) + " disorders")
+    alert("The child may have multiple " + JSON.stringify(survey.title) + " disorders");
   }
 }
 
