@@ -9,3 +9,6 @@ sudo npm i -g http-server
 
 2. to run the app, use command:
 http-server
+
+Live Example:
+https://lakshmanboddu.github.io/Childhood-mental-disorders/.
